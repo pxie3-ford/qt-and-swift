@@ -14,12 +14,12 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     @IBOutlet weak var window: NSWindow!
     var qtView: NSView?
 
-    func applicationDidFinishLaunching(aNotification: NSNotification) {
+    func applicationDidFinishLaunching(_ notification: Notification) {
         qtView = createQtApplicationView()
         window.contentView = qtView
     }
 
-    func applicationWillTerminate(aNotification: NSNotification) {
+    func applicationWillTerminate(_ notification: Notification) {
         destroyQtApplicationView(qtView!)
     }
 }

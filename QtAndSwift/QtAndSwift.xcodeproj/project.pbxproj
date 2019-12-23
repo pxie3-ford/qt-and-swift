@@ -7,11 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1E5B857E23B1324E00D3E353 /* QtApplication.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1E5B857C23B1323800D3E353 /* QtApplication.framework */; };
+		1E5B857F23B1324E00D3E353 /* QtApplication.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 1E5B857C23B1323800D3E353 /* QtApplication.framework */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		3EFC05B91C3E73C900BE1F4C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EFC05B81C3E73C900BE1F4C /* AppDelegate.swift */; };
 		3EFC05BB1C3E73C900BE1F4C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3EFC05BA1C3E73C900BE1F4C /* Assets.xcassets */; };
 		3EFC05BE1C3E73C900BE1F4C /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3EFC05BC1C3E73C900BE1F4C /* MainMenu.xib */; };
-		3EFC05C81C3E74F300BE1F4C /* QtApplication.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3EFC05C71C3E74F300BE1F4C /* QtApplication.framework */; };
-		3EFC05CA1C3E77F300BE1F4C /* QtApplication.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 3EFC05C71C3E74F300BE1F4C /* QtApplication.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -21,19 +21,19 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				3EFC05CA1C3E77F300BE1F4C /* QtApplication.framework in CopyFiles */,
+				1E5B857F23B1324E00D3E353 /* QtApplication.framework in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		1E5B857C23B1323800D3E353 /* QtApplication.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = QtApplication.framework; sourceTree = "<group>"; };
 		3EFC05B51C3E73C900BE1F4C /* QtAndSwift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = QtAndSwift.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3EFC05B81C3E73C900BE1F4C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3EFC05BA1C3E73C900BE1F4C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3EFC05BD1C3E73C900BE1F4C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
 		3EFC05BF1C3E73C900BE1F4C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		3EFC05C71C3E74F300BE1F4C /* QtApplication.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QtApplication.framework; path = ../QtApplication/QtApplication.framework; sourceTree = "<group>"; };
 		3EFC05CB1C3E78E100BE1F4C /* QtAndSwift-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "QtAndSwift-Bridging-Header.h"; path = "QtAndSwift/QtAndSwift-Bridging-Header.h"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -42,18 +42,26 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3EFC05C81C3E74F300BE1F4C /* QtApplication.framework in Frameworks */,
+				1E5B857E23B1324E00D3E353 /* QtApplication.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1E5B857923B131D500D3E353 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				1E5B857C23B1323800D3E353 /* QtApplication.framework */,
+			);
+			path = Frameworks;
+			sourceTree = "<group>";
+		};
 		3EFC05AC1C3E73C900BE1F4C = {
 			isa = PBXGroup;
 			children = (
+				1E5B857923B131D500D3E353 /* Frameworks */,
 				3EFC05CB1C3E78E100BE1F4C /* QtAndSwift-Bridging-Header.h */,
-				3EFC05C71C3E74F300BE1F4C /* QtApplication.framework */,
 				3EFC05B71C3E73C900BE1F4C /* QtAndSwift */,
 				3EFC05B61C3E73C900BE1F4C /* Products */,
 			);
@@ -118,6 +126,7 @@
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
+				English,
 				en,
 				Base,
 			);
@@ -251,13 +260,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				COMBINE_HIDPI_IMAGES = YES;
-				FRAMEWORK_SEARCH_PATHS = ../QtApplication;
+				FRAMEWORK_SEARCH_PATHS = "$(PROJECT_DIR)/Frameworks";
 				INFOPLIST_FILE = QtAndSwift/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				LIBRARY_SEARCH_PATHS = "";
 				PRODUCT_BUNDLE_IDENTIFIER = "org.qt-project.QtAndSwift";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "QtAndSwift/QtAndSwift-Bridging-Header.h";
+				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
 		};
@@ -266,13 +276,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				COMBINE_HIDPI_IMAGES = YES;
-				FRAMEWORK_SEARCH_PATHS = ../QtApplication;
+				FRAMEWORK_SEARCH_PATHS = "$(PROJECT_DIR)/Frameworks";
 				INFOPLIST_FILE = QtAndSwift/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				LIBRARY_SEARCH_PATHS = "";
 				PRODUCT_BUNDLE_IDENTIFIER = "org.qt-project.QtAndSwift";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "QtAndSwift/QtAndSwift-Bridging-Header.h";
+				SWIFT_VERSION = 5.0;
 			};
 			name = Release;
 		};
@@ -295,6 +306,7 @@
 				3EFC05C41C3E73C900BE1F4C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

@@ -37,15 +37,17 @@ Building this sample code
 
 1) Build and deploy QtApplication.framework
 
-    /path/to/qtbase/bin/qmake && make && /path/to/qtbase/bin/macdeployqt QtApplication.framework -deploy-framework
+    `/path/to/qtbase/bin/qmake && make && /path/to/qtbase/bin/macdeployqt QtApplication.framework -deploy-framework`
 
-[deploy-framework is an undocumented research option available on newer versions of macdeployqt]
+[`deploy-framework` is an undocumented research option available on newer versions of macdeployqt]
 
 2) Jump through a hoop and set the correct LC_RPATH on the cocoa platform plugin
 
-    install_name_tool -add_rpath @loader_path/../../Frameworks/ QtApplication.framework/Contents/PlugIns/platforms/libqcocoa.dylib
+    `install_name_tool -add_rpath @loader_path/../../Frameworks/ QtApplication.framework/Contents/PlugIns/platforms/libqcocoa.dylib`
 
 [this step will eventually go away]
+
+3) Move or copy QtApplicaiton.framework to `QtAndSwift/Frameworks`
 
 3) Open and Build the QtAndSwift project
 
@@ -66,9 +68,9 @@ If you want to recreate the Xcode project, or modify your own, here's how:
 
 2) Add QtApplication.framework
 
-    Build Phases -> Link Binary With Libraries: Add QtApplication.framework
-    Build Phases -> "+" -> New Copy Files Phase: Add QtApplication.framework
-    Build Settings -> Search Paths -> Framework Search Paths: Add ../QtApplication
+    - Drag and drop framework in Project Navigator, check `Copy items if needed`  
+    - Under `Frameworks, Libries and Embeded Contents` in Target settings, make sure the framework is set to `Embeded Without Signing`  
+    - Set Build Settings -> Search Paths -> Framework Search Paths: Add the path to the framework's directory
 
 3) Create the Swift -> C bridging header
 

@@ -1,7 +1,9 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="8191" systemVersion="14F19a" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="15505" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="8191"/>
+        <deployment identifier="macosx"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="15505"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
         <customObject id="-2" userLabel="File's Owner" customClass="NSApplication">
@@ -665,16 +667,47 @@
                     </menu>
                 </menuItem>
             </items>
+            <point key="canvasLocation" x="124" y="426"/>
         </menu>
         <window title="QtAndSwift" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" releasedWhenClosed="NO" animationBehavior="default" id="QvC-M9-y7g">
             <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
             <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
             <rect key="contentRect" x="335" y="390" width="480" height="360"/>
-            <rect key="screenRect" x="0.0" y="0.0" width="1440" height="877"/>
+            <rect key="screenRect" x="0.0" y="0.0" width="1680" height="1027"/>
             <view key="contentView" id="EiT-Mj-1SZ">
                 <rect key="frame" x="0.0" y="0.0" width="480" height="360"/>
                 <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="3Nc-7F-Crb">
+                        <rect key="frame" x="180" y="13" width="121" height="32"/>
+                        <buttonCell key="cell" type="push" title="Load/Destroy" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="4KC-Fx-m2V">
+                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                            <font key="font" metaFont="system"/>
+                        </buttonCell>
+                        <connections>
+                            <action selector="loadDestroyButtonDidPushed:" target="OUf-cU-puT" id="VeM-MP-BuA"/>
+                        </connections>
+                    </button>
+                    <customView translatesAutoresizingMaskIntoConstraints="NO" id="s5x-Lo-gWe">
+                        <rect key="frame" x="0.0" y="61" width="480" height="299"/>
+                    </customView>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="s5x-Lo-gWe" firstAttribute="leading" secondItem="EiT-Mj-1SZ" secondAttribute="leading" id="TFH-12-uss"/>
+                    <constraint firstAttribute="trailing" secondItem="s5x-Lo-gWe" secondAttribute="trailing" id="daK-i6-IUd"/>
+                    <constraint firstAttribute="bottom" secondItem="3Nc-7F-Crb" secondAttribute="bottom" constant="20" id="hZL-SQ-lZ8"/>
+                    <constraint firstItem="s5x-Lo-gWe" firstAttribute="top" secondItem="EiT-Mj-1SZ" secondAttribute="top" id="ivt-EY-KKS"/>
+                    <constraint firstItem="3Nc-7F-Crb" firstAttribute="top" secondItem="s5x-Lo-gWe" secondAttribute="bottom" constant="20" id="m9E-4X-F2s"/>
+                    <constraint firstItem="3Nc-7F-Crb" firstAttribute="centerX" secondItem="EiT-Mj-1SZ" secondAttribute="centerX" id="swZ-Lt-vJQ"/>
+                </constraints>
             </view>
+            <point key="canvasLocation" x="139" y="147"/>
         </window>
+        <viewController id="OUf-cU-puT" customClass="MainViewController" customModule="QtAndSwift" customModuleProvider="target">
+            <connections>
+                <outlet property="qtContainerView" destination="s5x-Lo-gWe" id="Wcn-6s-tW8"/>
+                <outlet property="view" destination="EiT-Mj-1SZ" id="AYp-f9-1Wr"/>
+            </connections>
+        </viewController>
     </objects>
 </document>
